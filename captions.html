@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spoorthi Caption Studio</title>
+    <meta
+      name="description"
+      content="A premium caption generator experience powered by your existing caption Groq API."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/shared.js" defer></script>
+    <script type="module" src="js/captions.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+      <div class="particle-layer" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-kicker">Created for Spoorthi</span>
+          <span class="brand-title">Beauty Intelligence Atelier</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open navigation" data-nav-toggle>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" data-nav-menu>
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link" href="analyzer.html">Analyzer</a>
+          <a class="nav-link" href="recipes.html">Recipe Menu</a>
+          <a class="nav-link is-active" href="captions.html">Captions</a>
+        </nav>
+      </header>
+
+      <main class="tool-main">
+        <section class="tool-hero">
+          <div data-reveal>
+            <p class="eyebrow">Caption integration</p>
+            <h1>Image captions with a refined, poetic product feel</h1>
+            <p class="hero-text narrow">
+              Your existing `caption.js` is now wrapped in a polished upload, preview, and
+              regenerate experience that matches the rest of the luxury interface.
+            </p>
+          </div>
+        </section>
+
+        <section class="tool-grid analyzer-grid">
+          <section class="panel upload-panel" data-reveal>
+            <div class="panel-header">
+              <p class="eyebrow">Upload image</p>
+              <h2>Choose a photo and let the caption oracle respond</h2>
+            </div>
+
+            <input id="caption-file" class="file-input" type="file" accept="image/*" />
+            <label class="dropzone" for="caption-file" id="caption-dropzone">
+              <span class="dropzone-badge">Vision prompt</span>
+              <strong>Select or drop an image</strong>
+              <span>The API can read the photo and write one polished caption.</span>
+            </label>
+
+            <figure class="image-preview" id="caption-preview">
+              <img id="caption-preview-image" alt="" hidden />
+              <figcaption id="caption-preview-caption">
+                Your selected image preview appears here before caption generation.
+              </figcaption>
+            </figure>
+
+            <div class="action-row wrap-actions">
+              <button class="primary-button" id="caption-submit" type="button">
+                Generate Caption
+              </button>
+              <button class="secondary-button" id="caption-regenerate" type="button">
+                Regenerate
+              </button>
+            </div>
+
+            <div class="status-box" id="caption-status">
+              Upload an image to create a caption.
+            </div>
+          </section>
+
+          <section class="panel caption-output" data-reveal>
+            <div class="panel-header">
+              <p class="eyebrow">Caption result</p>
+              <h2>Poetic output, tuned for elegance</h2>
+            </div>
+
+            <div class="caption-card">
+              <p class="caption-style" id="caption-style">Style label appears here.</p>
+              <blockquote id="caption-text">
+                The generated caption appears here after the oracle sees the image.
+              </blockquote>
+            </div>
+
+            <div class="comparison-banner">
+              Live captioning requires `GROQ_API_KEY`, and the integration is already wired for
+              deployment.
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

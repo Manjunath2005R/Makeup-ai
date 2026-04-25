@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spoorthi Beauty Analyzer</title>
+    <meta
+      name="description"
+      content="Positive AI beauty analysis and skincare guidance created specially for Spoorthi."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Urbanist:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="js/shared.js" defer></script>
+    <script type="module" src="js/analyzer.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-left"></div>
+      <div class="ambient ambient-right"></div>
+      <div class="particle-layer" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <a class="brand-mark" href="index.html">
+          <span class="brand-kicker">Created for Spoorthi</span>
+          <span class="brand-title">Beauty Intelligence Atelier</span>
+        </a>
+        <button class="nav-toggle" aria-label="Open navigation" data-nav-toggle>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="site-nav" data-nav-menu>
+          <a class="nav-link" href="index.html">Home</a>
+          <a class="nav-link is-active" href="analyzer.html">Analyzer</a>
+          <a class="nav-link" href="recipes.html">Recipe Menu</a>
+          <a class="nav-link" href="captions.html">Captions</a>
+        </nav>
+      </header>
+
+      <main class="tool-main">
+        <section class="tool-hero">
+          <div data-reveal>
+            <p class="eyebrow">Spoorthi spotlight</p>
+            <h1>Celebrate radiance with a premium beauty analysis flow</h1>
+            <p class="hero-text narrow">
+              Upload a portrait and receive uplifting, elegant beauty appreciation, a premium
+              score display, and skincare suggestions structured for positive self-care.
+            </p>
+          </div>
+          <div class="hero-pillars" data-reveal>
+            <div class="hero-pillar">
+              <span>Beauty score</span>
+              <strong>Animated premium reveal</strong>
+            </div>
+            <div class="hero-pillar">
+              <span>Compliments</span>
+              <strong>Warm, graceful, respectful</strong>
+            </div>
+            <div class="hero-pillar">
+              <span>Skin care</span>
+              <strong>Practical glow maintenance tips</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="tool-grid analyzer-grid">
+          <section class="panel upload-panel" data-reveal>
+            <div class="panel-header">
+              <p class="eyebrow">Upload portrait</p>
+              <h2>Choose a beautiful photo for Spoorthi's glow profile</h2>
+            </div>
+            <input
+              id="analyzer-file"
+              class="file-input"
+              type="file"
+              accept="image/*"
+            />
+            <label class="dropzone" for="analyzer-file" id="analyzer-dropzone">
+              <span class="dropzone-badge">Drag and drop</span>
+              <strong>Select or drop an image</strong>
+              <span>High-quality portraits work best for richer visual analysis.</span>
+            </label>
+
+            <figure class="image-preview" id="analyzer-preview">
+              <img id="analyzer-preview-image" alt="" hidden />
+              <figcaption id="analyzer-preview-caption">
+                Once a portrait is selected, it will appear here with a refined preview.
+              </figcaption>
+            </figure>
+
+            <div class="action-row">
+              <button class="primary-button" id="analyzer-submit" type="button">
+                Analyze Beauty Profile
+              </button>
+              <p class="hint-text">Live Groq analysis activates when `GROQ_API_KEY` is set.</p>
+            </div>
+
+            <div class="status-box" id="analyzer-status">
+              Upload a portrait to begin the experience.
+            </div>
+          </section>
+
+          <section class="panel results-panel" data-reveal>
+            <div class="panel-header">
+              <p class="eyebrow">Beauty reflection</p>
+              <h2>Positive insights crafted with care</h2>
+            </div>
+
+            <div class="score-layout">
+              <div class="score-ring" id="score-ring" style="--score: 0">
+                <div class="score-ring-inner">
+                  <span class="score-label">Beauty score</span>
+                  <strong id="score-value">--</strong>
+                  <small>/100</small>
+                </div>
+              </div>
+              <div class="score-copy">
+                <h3 id="analysis-summary-title">Awaiting Spoorthi's portrait</h3>
+                <p id="analysis-summary">
+                  This space reveals a graceful summary, soft encouragement, and a polished
+                  celebration of visible beauty details.
+                </p>
+                <div class="comparison-banner" id="comparison-banner">
+                  Grace that stands uniquely on its own.
+                </div>
+              </div>
+            </div>
+
+            <div class="results-columns">
+              <section>
+                <h3>Beauty appreciation</h3>
+                <div class="chip-list" id="compliments-list">
+                  <span class="empty-chip">Positive compliments appear here after analysis.</span>
+                </div>
+              </section>
+              <section>
+                <h3>Skin care guidance</h3>
+                <div class="tip-list" id="tips-list">
+                  <div class="tip-card is-empty">
+                    Thoughtful skincare and glow maintenance suggestions appear here.
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
